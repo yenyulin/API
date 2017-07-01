@@ -22,6 +22,11 @@ namespace ApiTest.Controllers
         }
 
         // GET: api/Products
+
+        /// <summary>
+        /// 取得產品
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<Product> GetProduct()
         {
             return db.Product;
