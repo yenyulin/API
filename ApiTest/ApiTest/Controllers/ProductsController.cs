@@ -124,5 +124,16 @@ namespace ApiTest.Controllers
         {
             return db.Product.Count(e => e.ProductId == id) > 0;
         }
+ 
+
+
+        [ResponseType(typeof(Product))]
+        [Route("products/{id}/Orderlines")]
+        public IHttpActionResult GetProductOrderLins(int id)
+        {
+            var orderlines = db.OrderLine.Where(p => p.ProductId == id);
+            return Ok(orderlines);
+        }
+
     }
 }
